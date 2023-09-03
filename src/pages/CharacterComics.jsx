@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const CharacterComics = () => {
-  const [comicsPerCharacter, setComicsPerCharacter] = useState();
+  const [comicsByCharacter, setComicsByCharacter] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const CharacterComics = () => {
           `https://site--marvel-backend--bw9kxpd2k92h.code.run/comics/${id}`
         );
         console.log(response.data);
-        setComicsPerCharacter(response.data);
+        setComicsByCharacter(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -29,9 +29,9 @@ const CharacterComics = () => {
     <span>En cours de chargement</span>
   ) : (
       <div className="container">
-            <h1>Comics ou {comicsPerCharacter.name} apparaît</h1>
+            <h1>Comics ou {comicsByCharacter.name} apparaît</h1>
         <section className="main-cards">
-            {comicsPerCharacter.comics.map((comics) => {
+            {comicsByCharacter.comics.map((comics) => {
               return (
                 <div key={comics._id}>
                     <p>{comics.title}</p>

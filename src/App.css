@@ -135,6 +135,7 @@ header button:hover, .red, .left:hover, .right:hover {
   color: #fff;
   border-radius: 8px;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .main-cards div button:last-child {

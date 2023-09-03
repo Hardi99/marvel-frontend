@@ -38,7 +38,7 @@ const Comic = () => {
                 />
             </div>
             <div>
-                <h1>{data.name}</h1>
+                <h1>{data.title}</h1>
                 <p>{data.description}</p>
             </div>
       </div>

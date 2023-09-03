@@ -1,42 +1,205 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* START */
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: black;
+  font-family: 'Archivo', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.1;
+}
+
+.container {
+  height: 100%;
+  width: 1240px;
+  margin: auto;
+}
+
+/* HEADER */
+
+header img {
+  width: 10%;
+  cursor: pointer;
+}
+
+header input {
+  width: 625px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+}
+
+header a, .login-content p {
+  color: #fff;
+}
+
+header button {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+header .container nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  border-color: 1px solid #fff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+header button:hover, .red, .left:hover, .right:hover {
+  border-color: #EE171F;
+  color: #EE171F;
+}
+
+/* HOME */  
+          .slider-container img {  
+          width: 100%;
+          height: 90%;
+          position: absolute;
+          object-fit: cover;
+         }  
+      .left, .right {  
+          cursor: pointer;  
+          position: absolute;  
+          top: 50%;  
+          width: auto;  
+          padding: 16px;  
+          margin-top: -22px;  
+          color: white;  
+          font-weight: bold;  
+          font-size: 18px;  
+          transition: 0.6s ease;  
+          border-radius: 0 3px 3px 0;  
+      }  
+      .right {  
+          right: 0;  
+          border-radius: 3px 0 0 3px;  
+      }
+
+/* MAIN-CARDS */
+
+.main-cards, .detail-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 15px;
+}
+
+.main-cards > div {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  width: calc((100% - 100px) / 5);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: gray;
+  position: relative;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-cards div button {
+  border: 3px solid orange;
+  padding: 0.6em 1.2em;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-cards div button:last-child {
+  border: 3px solid #EE171F;
+  padding: 0.6em 1.2em;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.main-cards div img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.detail-cards div {
+  border: 3px solid #EE171F;
+  border-radius: 6px;
+  width: calc((100% - 100px) / 2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
 }
 
-.read-the-docs {
-  color: #888;
+/* FORM */
+
+.contact-form {
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-form h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.contact-form, .contact-form form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input {
+  width: 300px;
+  height: 45px;
+  background-color: #fcf9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #d3d3d3;
+}
+
+form input:last-child {
+  background-color: #5c47d3;
+  color: #fff;
+}
+a:hover {
+  color: #EE171F;
 }

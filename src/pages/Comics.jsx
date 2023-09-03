@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Characters = () => {
+const Comics = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,8 +11,8 @@ const Characters = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://site--marvel-backend--bw9kxpd2k92h.code.run/characters");
-        // console.log(response.data);
+        const response = await axios.get("https://site--marvel-backend--bw9kxpd2k92h.code.run/comics");
+        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -28,18 +28,16 @@ const Characters = () => {
   ) : (
     <div className="container">
       <section className="main-cards">
-        {data.results.map((character) => {
+        {data.results.map((comic) => {
           return (
-            <div key={character._id}>
-                <p>{character.name}</p>
+            <div key={comic._id}>
+            <p>{comic.title}</p>
                 <img
                   src={
-                    character.thumbnail.path + "." + character.thumbnail.extension
+                    comic.thumbnail.path + "." + comic.thumbnail.extension
                   }
-                  alt=""
-                  />
-                  <button onClick={() => {navigate("/character/" + character._id);}}>Voir les infos</button>
-                  <button onClick={() => {navigate("/comics/" + character._id);}}>Comics associés</button>
+                  alt=""/>
+                  <button onClick={() => {navigate("/comic/" + comic._id);}}>Voir les infos</button>
             </div>
           );
         })}
@@ -48,4 +46,4 @@ const Characters = () => {
   );
 };
 
-export default Characters;
+export default Comics;
